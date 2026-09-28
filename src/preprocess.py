@@ -9,7 +9,7 @@ y_train = np.load("data/raw/y_train.npy")
 x_test = np.load("data/raw/x_test.npy")
 y_test = np.load("data/raw/y_test.npy")
 
-# Main normalization: standardize using training mean and std
+
 x_train = x_train.astype("float32") / 255.0
 x_test = x_test.astype("float32") / 255.0
 
@@ -18,6 +18,8 @@ std = x_train.std()
 
 x_train = (x_train - mean) / std
 x_test = (x_test - mean) / std
+
+
 
 x_train = x_train.reshape(-1, 28 * 28)
 x_test = x_test.reshape(-1, 28 * 28)
