@@ -1,16 +1,14 @@
 stages:
   prepare:
     cmd: python src/prepare.py
-    outs:
-      - data/raw
+    deps:
+      - src/prepare.py
 
   preprocess:
     cmd: python src/preprocess.py
     deps:
       - data/raw
       - src/preprocess.py
-    outs:
-      - data/processed
 
   train:
     cmd: python src/train.py
@@ -18,8 +16,6 @@ stages:
       - data/processed
       - src/train.py
       - params.yaml
-    outs:
-      - models/model.h5
 
   evaluate:
     cmd: python src/evaluate.py
