@@ -2,6 +2,7 @@ import numpy as np
 import tensorflow as tf
 import os
 import yaml
+import pandas as pd
 
 os.makedirs("models", exist_ok=True)
 
@@ -36,6 +37,6 @@ history = model.fit(
 
 model.save("models/model.h5")
 
-np.save("models/history.npy", history.history)
+pd.DataFrame(history.history).to_csv("models/history.csv", index=False)
 
 print("Model training completed successfully.")

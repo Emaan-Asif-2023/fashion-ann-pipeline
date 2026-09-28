@@ -3,5 +3,5 @@ model:
   dropout: 0.2
 
 training:
-  epochs: 10
+  epochs: 7
   batch_size: 128
