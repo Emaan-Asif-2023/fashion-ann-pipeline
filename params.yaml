@@ -1,0 +1,7 @@
+model:
+  hidden_units: 128
+  dropout: 0.2
+
+training:
+  epochs: 10
+  batch_size: 128
